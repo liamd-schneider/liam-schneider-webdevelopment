@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0d0e;
+  --foreground: #f5f4f0;
+  --muted: #8a8d8f;
+  --line: #2a2d2e;
+  --accent: #d4ff4f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --font-display: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial,
+    sans-serif;
+  --font-body: "Inter var", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas,
+    monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-blink {
+  animation: blink 1.1s step-end infinite;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+
