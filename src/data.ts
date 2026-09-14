@@ -131,6 +131,32 @@ export const PROJECTS: Project[] = [
       "Die Plattform setzt auf eine mehrschichtige Sicherheitsarchitektur: Zero-Trust-Auth mit IP-Rate-Limiting, progressiven Account-Sperren und Geräte-Fingerprinting, einen manipulationssicheren Audit-Trail per Hash-Kette für jeden Zugriff auf Patientendaten sowie einen selbst gehosteten Malware-Scan für alle Foto-Uploads, damit keine Daten an Dritte gehen. Dazu kommen klassische Web-Härtungsmaßnahmen wie CSP-Header, sichere Cookie-Flags, parametrisierte Queries und JWT-Auth mit Admin-only-Endpunkten. Die Weiterentwicklung erfolgt in einem klaren Feature- → Go-Live- → Bugfixing-Zyklus mit eigenen Testskripten und automatisierten Vulnerability-Scans.",
     result: "Die Plattform ist live im Einsatz und wird aktiv von Ärzt:innen und Patient:innen genutzt.",
   },
+  {
+    slug: "pfandhaus-oldenburg",
+    title: "Pfandhaus Oldenburg",
+    category: "Individualsoftware · Pfandhausverwaltung",
+    image: "/pfandhaus/hero-pfandhaus.jpg",
+    images: [
+      "/pfandhaus/hero-pfandhaus.jpg",
+      "/pfandhaus/01-dashboard.png",
+      "/pfandhaus/02-kunden.png",
+      "/pfandhaus/03-vertrag-detail.png",
+      "/pfandhaus/04-kassenbuch.png",
+      "/pfandhaus/05-goldankauf.png",
+      "/pfandhaus/06-versteigerung.png",
+    ],
+    featured: true,
+    span: "md:col-span-7",
+    aspect: "aspect-4/3",
+    about:
+      "Pfandhaus Oldenburg ist eine moderne Web-Anwendung, die die veraltete Desktop-Software (Baujahr 2009) eines Pfandhauses für den kompletten Betriebsablauf ablöst: Kundenverwaltung, Pfandverträge, Kassenbuch, Goldankauf, Verwertung und Versteigerung nach Ablauf der gesetzlichen Frist. Die Anwendung läuft aktuell im Parallelbetrieb neben dem Altsystem.",
+    challenge:
+      "Die Software verarbeitet hochsensible personenbezogene Daten wie Ausweisnummern und Vermögenswerte und musste dabei gleichzeitig revisionssichere Nachvollziehbarkeit für Prüfungen, Konformität mit der Pfandleiherverordnung (gesetzliche Mindestlaufzeiten und Verwertungsfristen) und DSGVO-gerechten Umgang mit Kundendaten sicherstellen. Hinzu kam die Migration eines gewachsenen historischen Datenbestands – rund 120.000 Verträge, über 370.000 Kassenbucheinträge und mehr als 8.700 Kunden – aus den SQL-Dumps des Altsystems.",
+    solution:
+      "Ich habe die komplette Fachlogik für den Pfandhaus-Alltag umgesetzt: Kundenverwaltung mit Legitimationsprüfung, Vertragsabschluss/-verlängerung/-einlösung, einen Edelmetall-Rechner nach Feingehalt, separaten Goldankauf, doppelte Kassenbuchführung mit Stornofunktion, eine automatische Verwertungsliste nach §9 PfandlV sowie ein Versteigerungsmodul inklusive Live-Auktionsmodus für die Beamer-Leinwand am Auktionstag. Sicherheitsseitig sind sensible Felder wie Ausweis- und Passnummern serverseitig mit AES-256-GCM verschlüsselt und werden nie im Klartext gespeichert oder geloggt, Sessions laufen ohne Klartext-Tokens in der Datenbank (nur als SHA-256-Hash) mit E-Mail-basierter Zwei-Faktor-Authentifizierung, und ein unveränderliches Audit-Log protokolliert per Datenbank-Trigger jede Änderung an Kunden, Verträgen, Kassenbuch und Benutzerkonten – nachträgliches Ändern oder Löschen ist auch für Administratoren technisch ausgeschlossen. Für die Migration habe ich einen eigenen Parser für die SQL-Dumps des Altsystems geschrieben, der historische Formatfehler korrigiert und die gesetzlichen Mindestlaufzeiten validiert. Technisch basiert die Anwendung auf Next.js (App Router) und React mit TypeScript im Strict Mode sowie PostgreSQL mit Drizzle ORM, abgesichert durch eine automatisierte CI-Pipeline mit Typecheck, Linting und Dependency-Audit bei jedem Commit.",
+    result:
+      "Die Anwendung läuft aktuell im Parallelbetrieb neben dem Altsystem, während der komplette historische Datenbestand migriert und laufend abgeglichen wird. Ich betreue Hosting und Weiterentwicklung laufend.",
+  },
 ];
 
 export type Exploration = {
