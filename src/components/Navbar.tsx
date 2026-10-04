@@ -33,10 +33,7 @@ export default function Navbar() {
           onClick={scrollToId("home")}
           className="group relative flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-300 hover:scale-110"
         >
-          <span className="accent-gradient absolute inset-0 rounded-full transition-[background-image] duration-300 [background-image:linear-gradient(90deg,#89AACC_0%,#4E85BF_100%)] group-hover:[background-image:linear-gradient(270deg,#89AACC_0%,#4E85BF_100%)]" />
-          <span className="relative flex h-[calc(100%-2px)] w-[calc(100%-2px)] items-center justify-center rounded-full bg-bg">
-            <span className="font-display text-[13px] italic text-text-primary">LS</span>
-          </span>
+          <img src="/logo.png" alt="Liam Schneider" className="h-full w-full object-contain p-1" />
         </a>
 
         <span className="mx-1 hidden h-5 w-px bg-stroke sm:block" />

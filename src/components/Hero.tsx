@@ -40,8 +40,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" ref={rootRef} className="relative flex h-screen items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
+    <section id="home" ref={rootRef} className="relative flex min-h-screen items-center justify-center py-28">
+      <div className="absolute inset-0 overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
@@ -55,23 +55,28 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
-        <span className="blur-in mb-8 text-xs uppercase tracking-[0.3em] text-muted">
+        <img
+          src="/logo.png"
+          alt="Liam Schneider"
+          className="blur-in mb-4 h-36 w-36 object-contain md:h-52 md:w-52"
+        />
+
+        <span className="blur-in mb-5 text-xs uppercase tracking-[0.3em] text-muted">
           Portfolio &apos;26
         </span>
 
-        <h1 className="name-reveal mb-6 font-display text-6xl italic leading-[0.9] tracking-tight text-text-primary md:text-8xl lg:text-9xl">
+        <h1 className="name-reveal mb-4 font-display text-6xl italic leading-[0.9] tracking-tight text-text-primary md:text-8xl lg:text-9xl">
           Liam Schneider
         </h1>
 
         <p className="blur-in mb-2 text-base text-muted md:text-lg">
-          Ein{" "}
           <span key={roleIndex} className="animate-role-fade-in inline-block font-display italic text-text-primary">
-            {ROLES[roleIndex]}
+            {ROLES[roleIndex]}.
           </span>{" "}
-          aus Deutschland.
+          Aus Deutschland.
         </p>
 
-        <p className="blur-in mb-12 max-w-md text-sm text-muted md:text-base">
+        <p className="blur-in mb-8 max-w-md text-sm text-muted md:text-base">
           Ich entwickle Websites, automatisiere wiederkehrende Prozesse und
           kümmere mich um Hosting und Wartung – damit deine digitalen Systeme
           einfach und zuverlässig laufen.

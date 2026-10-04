@@ -9,7 +9,7 @@ export const NAV_LINKS = [
 
 export const LOADING_WORDS = ["Entwickeln", "Automatisieren", "Betreuen"];
 
-export const ROLES = ["Entwickler", "Automatisierer", "Hoster", "Betreuer"];
+export const ROLES = ["Entwickler", "Automatisierer", "Admin", "Betreuer"];
 
 export type Project = {
   slug: string;
@@ -226,4 +226,4 @@ export const SOCIALS = [
   { label: "Trustpilot", href: TRUSTPILOT_PROFILE_URL },
 ];
 
-export const CONTACT_EMAIL = "liamd.schneider@gmail.com";
+export const CONTACT_EMAIL = "kontakt@liam-schneider.de";
